@@ -1,50 +1,53 @@
-package com.example.login_mvp.persenter;
+package com.example.login_mvp.screen;
 
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import androidx.annotation.RequiresApi;
-import com.example.login_mvp.model.IUser;
-import com.example.login_mvp.model.User;
-import com.example.login_mvp.view.ILoginView;
+import com.example.login_mvp.data.model.User;
 import java.util.Objects;
 
-public class LoginPresenterCompl implements ILoginPresenter {
-    private ILoginView mILoginView;
-    private IUser mIUser;
+public class LoginPresenterCompl implements ILoginContract.Presenter {
+    private ILoginContract.View mView;
+    private User mUser;
     private Handler mHandler;
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public LoginPresenterCompl(ILoginView ILoginView) {
-        mILoginView = ILoginView;
+    LoginPresenterCompl(ILoginContract.View View) {
+        mView = View;
         initUser();
         mHandler = new Handler(Objects.requireNonNull(Looper.myLooper()));
     }
 
     private void initUser() {
-        mIUser = new User("Huy","123");
+        mUser = new User("Huy","123");
     }
 
     @Override
     public void clear() {
-        mILoginView.clearText();
+        mView.clearText();
     }
 
     @Override
     public void doLogin(String name, String pass) {
         boolean isLoginSuccess = true;
-        final int code = mIUser.checkValidity(name,pass);
+        final int code = mUser.checkValidity(name,pass);
         if (code!=0) isLoginSuccess = false;
         final Boolean result = isLoginSuccess;
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                mILoginView.onLoginResult(result,code);
+                mView.onLoginResult(result,code);
             }
         },500);
     }
 
     @Override
     public void doProcessBar(int visibility) {
-        mILoginView.onSetProcessBar(visibility);
+        mView.onSetProcessBar(visibility);
+    }
+
+    @Override
+    public void setView(ILoginContract.View view) {
+        
     }
 }

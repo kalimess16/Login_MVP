@@ -1,4 +1,4 @@
-package com.example.login_mvp.view;
+package com.example.login_mvp.screen;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -10,14 +10,12 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.login_mvp.R;
-import com.example.login_mvp.persenter.ILoginPresenter;
-import com.example.login_mvp.persenter.LoginPresenterCompl;
 
-public class MainActivity extends AppCompatActivity implements ILoginView {
+public class MainActivity extends AppCompatActivity implements ILoginContract.View {
 
     private EditText mUserName, mPassword;
     private ProgressBar mProgressBar;
-    private ILoginPresenter mLoginPresenter;
+    private ILoginContract.Presenter mLoginPresenter;
     private Button mLogin, mClean;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
