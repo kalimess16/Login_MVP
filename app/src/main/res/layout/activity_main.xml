@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_10">
+
+    <EditText
+        android:gravity="center"
+        android:textSize="@dimen/sp_20"
+        android:inputType="textImeMultiLine"
+        android:id="@+id/text_login_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/username"
+        tools:ignore="Autofill"
+        />
+
+    <EditText
+        android:gravity="center"
+        android:textSize="@dimen/sp_20"
+        android:textLocale="*"
+        android:inputType="textPassword"
+        android:id="@+id/text_login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        tools:ignore="Autofill"
+        />
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:onClick="onClick"
+            android:id="@+id/button_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_4"
+            android:layout_weight="1"
+            android:text="@string/login"
+            android:layout_marginEnd="@dimen/dp_4"
+            tools:ignore="ButtonStyle"
+            />
+
+        <Button
+            android:onClick="onClick"
+            android:id="@+id/btn_clear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:text="@string/clear"
+            android:layout_marginStart="@dimen/dp_4"
+            tools:ignore="ButtonStyle"
+            />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_40" />
+
+</LinearLayout>

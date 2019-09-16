@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Login_MVP</string>
+    <string name="username">USERNAME</string>
+    <string name="password">PASSWORD</string>
+    <string name="login">Login</string>
+    <string name="clear">Clear</string>
+    <string name="correct_user_mvp_mvp">correct user: mvp, mvp</string>
+</resources>
