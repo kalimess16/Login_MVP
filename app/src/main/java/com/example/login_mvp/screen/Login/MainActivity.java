@@ -1,5 +1,6 @@
-package com.example.login_mvp.screen;
+package com.example.login_mvp.screen.Login;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.login_mvp.R;
+import com.example.login_mvp.screen.List_View.ListItemsView;
 
 public class MainActivity extends AppCompatActivity implements ILoginContract.View {
 
@@ -71,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements ILoginContract.Vi
         mLogin.setEnabled(true);
         if (result) {
             Toast.makeText(this, "Login Success " , Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, ListItemsView.class);
+            startActivity(intent);
         }else {
             Toast.makeText(this, "Fail Somethings " + code, Toast.LENGTH_SHORT).show();
         }

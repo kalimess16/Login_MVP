@@ -1,4 +1,4 @@
-package com.example.login_mvp.screen;
+package com.example.login_mvp.screen.Login;
 
 import android.os.Build;
 import android.os.Handler;
@@ -48,6 +48,6 @@ public class LoginPresenterCompl implements ILoginContract.Presenter {
 
     @Override
     public void setView(ILoginContract.View view) {
-        
+        mView = view;
     }
 }

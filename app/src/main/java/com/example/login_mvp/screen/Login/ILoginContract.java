@@ -1,4 +1,4 @@
-package com.example.login_mvp.screen;
+package com.example.login_mvp.screen.Login;
 
 import com.example.login_mvp.utils.BasePresenter;
 
