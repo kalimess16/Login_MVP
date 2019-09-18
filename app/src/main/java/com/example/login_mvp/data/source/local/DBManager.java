@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 import com.example.login_mvp.R;
 import com.example.login_mvp.data.model.Personal;
-import com.example.login_mvp.data.source.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
